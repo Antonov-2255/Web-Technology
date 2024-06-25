@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical-7</title>
+    <style>
+        #my1 
+		{
+            width: 200px;
+            height: 200px;
+            background-color: #FF00FF;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="my1">Click me!</div>
+
+<script>
+
+    document.getElementById('my1').addEventListener('click', function() 
+	{
+        alert('Click event has been triggered!');
+    });
+
+    document.getElementById('my1').addEventListener('mouseover', function() 
+	{
+        this.style.background = 'blue';
+    });
+
+ 
+    document.getElementById('my1').addEventListener('mouseout', function() 
+	{
+        this.style.backgroundColor = '#FF00FF';
+    });
+
+
+    document.addEventListener('keydown', function(event) 
+	{
+        alert('Keydown event triggered! Key code: ' + event.keyCode);
+    });
+</script>
+
+</body>
+</html>

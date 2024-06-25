@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript While Loop</h2>
+
+<p id="result1"></p>
+<p id="result2"></p>
+
+<script>
+
+  function calculate(a, b, c) 
+  {
+    let sum = a + b + c;
+    let difference = a - b - c;
+    return { sum, difference };
+  }
+
+  // Call the function with different arguments
+  let result1 = calculate(10, 5, 3);
+  let result2 = calculate(20, 8, 12);
+
+  // Log the results in HTML
+  document.getElementById("result1").innerHTML = "Result 1 - Sum: " + result1.sum + ", Difference: " + result1.difference;
+  document.getElementById("result2").innerHTML = "Result 2 - Sum: " + result2.sum + ", Difference: " + result2.difference;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Change HTML Attribute</title>
+</head>
+<body>
+
+  <img id="myImage" src="https://mastermixmovies.files.wordpress.com/2020/09/garfield-the-movie.jpg" width="50%" height="50%" alt="Original Image">
+
+  <button onclick="changeAttribute()">Change Image</button>
+
+  <script>
+    function changeAttribute() 
+	{
+      var imageElement = document.getElementById("myImage");
+	  
+      imageElement.src = "https://s.yimg.com/ny/api/res/1.2/iS0JdBBQ9CSQT9MDnlhIcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQ4MA--/https://media.zenfs.com/en-MY/News/CinemaOnline/7n_garfieldanimatedmovie00.jpg";
+	  
+    }
+  </script>
+
+</body>
+</html>

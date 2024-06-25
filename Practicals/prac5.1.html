@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arithmetic Operations</title>
+</head>
+<body>
+
+<h1>JavaScript Arithmetic Operators</h1>
+
+  <div id="demo"></div>
+
+  <script>
+    function performArithmeticOperations(p1, p2) {
+      let additionResult = p1 + p2;
+      let subtractionResult = p1 - p2;
+      let multiplicationResult = p1 * p2;
+      let divisionResult = p1 / p2;
+      let modulusResult = p1 % p2; 
+      let incrementP1 = p1 + 1;
+      let decrementP2 = p2 - 1;
+
+      return {
+        addition: additionResult,
+        subtraction: subtractionResult,
+        multiplication: multiplicationResult,
+        division: divisionResult,
+        modulus: modulusResult,
+        increment: incrementP1,
+        decrement: decrementP2,
+      };
+    }
+
+    let numbers = { p1: 10, p2: 3 }; 
+    let results = performArithmeticOperations(numbers.p1, numbers.p2);
+    
+    document.getElementById("demo").innerHTML = "Addition: " + results.addition +
+      "<br> Subtraction: " + results.subtraction +
+      "<br> Multiplication: " + results.multiplication +
+      "<br> Division: " + results.division +
+      "<br> Modulus: " + results.modulus +
+      "<br> Increment: " + results.increment +
+      "<br> Decrement: " + results.decrement;
+  </script>
+
+</body>
+</html>

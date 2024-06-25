@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hide/Show Elements</title>
+  <style>
+    
+	#myElement 
+	{
+      width: 700px;
+      height: 600px;
+      background: url("https://i.chzbgr.com/full/9436860160/hA8DFCB8B/lamp-answering-multiple-choice-questions-exam-thelorercompang") no-repeat ;
+ 
+    }
+  </style>
+</head>
+<body>
+
+  <div id="myElement"></div>
+
+  <button onclick="toggleVisibility()">Toggle Visibility</button>
+
+  <script>
+    function toggleVisibility() 
+	{
+      var myElement = document.getElementById("myElement");
+
+      if (myElement.style.display == "none" || myElement.style.display == "")
+	  {
+        myElement.style.display = "block";
+      } 
+	  else 
+	  {
+        myElement.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+</head>
+    <style>
+        body 
+		{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-image: url('https://static.vecteezy.com/system/resources/previews/026/759/864/non_2x/large-library-with-many-books-and-bookshelves-for-learning-with-knowledge-ai-generated-free-photo.jpg');
+	
+        }
+
+        .login-container 
+		{
+            background-image: url('https://www.bhmpics.com/downloads/patterned-backgrounds/55.subtle-prism-triangle-pattern.jpg');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        form 
+		{
+            margin-top: 20px;
+        }
+
+        label 
+		{
+            display: block;
+            margin-bottom: 5px;
+            color: #FF00FF;
+			font-size:20px;
+			font-weight:bold;
+        }
+
+        input 
+		{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        button 
+		{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 4px;
+            background-color: #4caf50;
+            color: yellow;
+			font-size:20px;
+			font-weight:bold;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover 
+		{
+            background-color: #45a049;
+        }
+
+        .signup-link, .forgot-password-link 
+		{
+            margin-top: 15px;
+            color: #555;
+			font-size:17px;
+			font-weight:bold;
+        }
+
+        .signup-link a, .forgot-password-link a 
+		{
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+		
+		
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2 style="color:#FF6347">Login to Miami Bookstore</h2>
+    
+	<form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+    
+	<div class="forgot-password-link">
+        <a>Forgot your password?</a>
+    </div>
+    
+	<div class="signup-link">
+        Don't have an account? <a href="file:///C:/Users/bhavi/Desktop/MU/Semester-4/WT/Practicals/CSE/signup.html">Sign up here</a>
+    </div>
+</div>
+
+</body>
+</html>

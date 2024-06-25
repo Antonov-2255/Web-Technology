@@ -1,0 +1,21 @@
+1. Declare and initialize variables for a person's name, age, and city.
+2. Use an if statement to check if the person's age is greater than 18 If true, log a message saying they are an adult; otherwise, log a message saying they are a minor.
+3. Create a function that takes three parameters (numbers) and returns their sum and diffrence
+and Call the function with different arguments and log the result.
+4. Use the modulus operator to find the remainder when dividing the person's age by 2.
+5. Concatenate the person's name and city using the string concatenation operator.
+6. Use a for loop to iterate from 1 to 5 and log the current iteration number.
+7. Use a while loop to keep subtracting 5 from the person's age until it is less than 0, and log each result.
+8. Create an array of three favorite colors, flowers, places, subjects and languages.
+9. Use a for...of loop to log each of the above things (Q-8) in the array.
+10. Write a program to print numbers from 0 to 100 using a for loop.
+11. Write a program to print numbers from 100 to 0 using a for loop.
+12. Write a program to print numbers from 1 to 100 using a while loop.
+13. Write a program to print numbers from 100 to 1 using a while loop.
+14. Use a loop to print even numbers from 0 to 200.
+15. Use a loop to print odd numbers from 200 to 0.
+16. Calculate and print the sum of numbers from 1 to 50 using a while loop.
+17. Calculate and print the sum of numbers from 0 to 150 using a for loop.
+18. Calculate and print the sum of even numbers from 1 to 100 using a while loop.
+19. Calculate and print the sum of odd numbers from 150 to 350 using a for loop.
+20. Calculate and print the avarage of numbers from 1 to 50 using a while/for loop.

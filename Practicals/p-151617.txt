@@ -1,0 +1,120 @@
+p-15
+<!DOCTYPE html>
+<html>
+<head>
+    <title> PHP Pr-15</title>
+</head>
+<body>
+    <h1> Dynamic web-page using PHP and HTML</h1>
+    <hr>
+// add more content of html like link photo etc...
+    <?php
+    // PHP code to display dynamic content
+     echo "add more content of php....";
+    $c_date = date('Y-m-d');
+    $c_time = date('H:i:s');
+    $c_ip = $_SERVER['REMOTE_ADDR'];
+    echo "<p>Current Date: $c_date</p>";
+    echo "<p>Current Time: $c_time</p>";
+    echo "<p>Your IP Address: $c_ip</p>";
+    ?>
+</body>
+</html>
+
+p-16
+<html>
+<head>
+    <title>GET and POST Example</title>
+</head>
+<body>
+
+<h2>GET Method</h2>
+<form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    Name: <input type="text" name="name_get">
+    <input type="submit" value="Submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    // Retrieving data using GET method
+    if(isset($_GET['name_get'])) {
+        $name_get = $_GET['name_get'];
+        echo "Hello, $name_get!";
+    }
+}
+?>
+
+<hr>
+
+<h2>POST Method</h2>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    Name: <input type="text" name="name_post">
+    <input type="submit" value="Submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieving data using POST method
+    if(isset($_POST['name_post'])) {
+        $name_post = $_POST['name_post'];
+        echo "Hello, $name_post!";
+    }
+}
+?>
+
+</body>
+</html>
+
+p-17
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+</head>
+<body>
+    <h2>Basic Calculator</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <input type="text" name="num1" placeholder="Enter number 1" required><br><br>
+        <input type="text" name="num2" placeholder="Enter number 2" required><br><br>
+        <select name="operator">
+            <option value="add">Addition (+)</option>
+            <option value="subtract">Subtraction (-)</option>
+            <option value="multiply">Multiplication (*)</option>
+            <option value="divide">Division (/)</option>
+        </select><br><br>
+        <input type="submit" name="submit" value="Calculate">
+    </form>
+    <?php
+    if(isset($_POST['submit'])){
+        $num1 = $_POST['num1'];
+        $num2 = $_POST['num2'];
+        $operator = $_POST['operator'];
+
+        switch($operator){
+            case "add":
+                $result = $num1 + $num2;
+                echo "Result: $num1 + $num2 = $result";
+                break;
+            case "subtract":
+                $result = $num1 - $num2;
+                echo "Result: $num1 - $num2 = $result";
+                break;
+            case "multiply":
+                $result = $num1 * $num2;
+                echo "Result: $num1 * $num2 = $result";
+                break;
+            case "divide":
+                if($num2 == 0){
+                    echo "Cannot divide by zero!";
+                } else {
+                    $result = $num1 / $num2;
+                    echo "Result: $num1 / $num2 = $result";
+                }
+                break;
+            default:
+                echo "Invalid operator";
+        }
+    }
+    ?>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Alerts</title>
+</head>
+<body>
+
+  <script>
+    alert("This is a simple alert!");
+
+    var userChoice = confirm("Do you want to proceed?");
+    if (userChoice) 
+	{
+      alert("You clicked OK!");
+    } 
+	else 
+	{
+      alert("You clicked Cancel!");
+    }
+
+    var userResponse = prompt("Please enter your name:", );
+    if (userResponse !== null) 
+	{
+      alert("Hello, " + userResponse + "!");
+    } 
+	else 
+	{
+      alert("You clicked Cancel or closed the prompt!");
+    }
+  </script>
+
+</body>
+</html>

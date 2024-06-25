@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head>
+ 
+  <title>Squares and Cubes Table</title>
+  <style>
+    table 
+	{
+      border-collapse: collapse;
+      width: 50%;
+      margin: 20px auto;
+    }
+
+    th, td 
+	{
+      border: 1px solid #FF00FF;
+      text-align: center;
+      padding: 8px;
+    }
+
+    th 
+	{
+      background-color: cyan;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function generateTable() 
+  {
+
+    let tableHTML = '<table>';
+    tableHTML += '<tr><th>Number</th><th>Square</th><th>Cube</th></tr>';
+
+
+    for (let i = 0; i <= 10; i++) 
+	{
+      const square = i * i;
+      const cube = i * i * i;
+
+      tableHTML += `<tr>
+	                    <td>${i}</td>
+						<td>${square}</td>
+						<td>${cube}</td>
+					</tr>`;
+    }
+
+    tableHTML += '</table>';
+
+    document.body.innerHTML = tableHTML;
+  }
+
+  generateTable();
+</script>
+
+</body>
+</html>

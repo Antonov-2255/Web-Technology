@@ -1,0 +1,11 @@
+/* styles.css */
+h1.b {
+    color: #FF00FF;
+    text-align: center;
+}
+
+p.b {
+    font-size: 22px;
+    line-height: 1.5;
+	text-align: center;
+}

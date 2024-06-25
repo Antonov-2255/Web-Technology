@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript calculateSum Alerts</title>
+</head>
+<body>
+
+  <script>
+	function calculateSum()
+	{
+    var n = prompt("Enter a number:");
+    var addNumber = confirm("Do you want to add another number?");
+
+    var sum = parseInt(n);
+
+    while (addNumber) 
+	{
+        var anotherNumber = prompt("Enter another number:");
+        sum += parseInt(anotherNumber);
+        addNumber = confirm("Do you want to add another number?");
+    }
+
+    alert("Sum of the numbers is: " + sum);
+}
+
+
+calculateSum();
+
+
+  </script>
+
+</body>
+</html>
