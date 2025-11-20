@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Matches & Claims | Admin Panel</title>
+    <!-- Load Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9;
+        }
+        .sidebar {
+            background-color: #2c3e50; /* Darker blue/gray */
+            color: white;
+            min-height: 100vh;
+        }
+        .sidebar .nav-link {
+            color: #ecf0f1;
+            padding: 10px 15px;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: white;
+            background-color: #34495e;
+            border-left-color: #1abc9c; /* Teal accent */
+        }
+        .content-area {
+            flex-grow: 1;
+        }
+        .match-row:hover {
+            background-color: #e9ecef;
+        }
+        .match-card {
+            border: 1px solid #1abc9c;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="d-flex">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar d-flex flex-column p-3">
+            <h3 class="fw-bold mb-4 text-center text-uppercase border-bottom pb-2">Admin Panel</h3>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="admin_dashboard.html" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2 me-2" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M.5 10a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1zM.5 5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1zM8 2c-3.3137 0-6 2.6863-6 6s2.6863 6 6 6 6-2.6863 6-6-2.6863-6-6-6zM3.5 8a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1z"/></svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="admin_manage_found.html" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search me-2" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h.001c.456.446.903.876 1.34 1.298l3.142 3.142a1 1 0 0 0 1.414-1.414l-3.142-3.142a7.5 7.5 0 0 0-1.298-1.34h-.001zM6.5 12a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11"/></svg>
+                        Manage Found Items
+                    </a>
+                </li>
+                <li>
+                    <a href="admin_manage_lost.html" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill me-2" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10V.5a.5.5 0 0 0-1 0V1H7V.5a.5.5 0 0 0-1 0V1z"/></svg>
+                        Manage Lost Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="admin_matches.html" class="nav-link active" aria-current="page">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill me-2" viewBox="0 0 16 16"><path d="M6.91 1.76l4.225 4.095c.237.23.4.498.498.79.098.29.137.604.137.915V14a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2V7.76l2.946-2.855c.225-.218.528-.352.846-.352h.001z"/></svg>
+                        Review Matches & Claims
+                    </a>
+                </li>
+                <li>
+                    <a href="admin_settings.html" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2003/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill me-2" viewBox="0 0 16 16"><path d="M9.405 1.05c-.61-1.237-2.316-1.237-2.926 0l-1.037 2.09c-.118.238-.382.4-.664.407l-2.316.335a.65.65 0 0 0-.374 1.137l1.67 1.625c.18.175.277.412.234.654l-.4 2.227c-.097.54.277 1.045.795 1.045h4.634a.65.65 0 0 0 .795-1.045l-.4-2.227c-.043-.242.054-.479.234-.654l1.67-1.625a.65.65 0 0 0-.374-1.137l-2.316-.335c-.282-.007-.546-.169-.664-.407z"/></svg>
+                        Settings & Users
+                    </a>
+                </li>
+            </ul>
+            <hr class="text-white-50">
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://placehold.co/32x32/1abc9c/ffffff?text=AD" alt="Admin" width="32" height="32" class="rounded-circle me-2">
+                    <strong class="fw-semibold">Admin User</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="admin_login.html">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Sidebar Navigation -->
+
+        <!-- Main Content Area -->
+        <div class="content-area p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                <h1 class="h2 fw-bold text-dark">Review Item Matches and Claims</h1>
+                <a href="admin_dashboard.html" class="btn btn-outline-secondary btn-sm">← Back to Dashboard</a>
+            </div>
+
+            <!-- Tab Navigation for Matches vs Claims -->
+            <ul class="nav nav-pills mb-4" id="matchClaimTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="matches-tab" data-bs-toggle="tab" data-bs-target="#matches" type="button" role="tab" aria-controls="matches" aria-selected="true">System Matches (4)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="claims-tab" data-bs-toggle="tab" data-bs-target="#claims" type="button" role="tab" aria-controls="claims" aria-selected="false">User Claims (2)</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="matchClaimTabContent">
+                
+                <!-- System Matches Tab -->
+                <div class="tab-pane fade show active" id="matches" role="tabpanel" aria-labelledby="matches-tab">
+                    <p class="text-muted mb-4">These potential matches were generated automatically based on item categories and keywords. Review them carefully before contacting users.</p>
+                    
+                    <!-- Match Card Example 1 -->
+                    <div class="card match-card mb-4">
+                        <div class="card-header bg-success text-white fw-bold d-flex justify-content-between align-items-center">
+                            Potential Match #001 <span class="badge bg-light text-success">95% Confidence</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 border-end">
+                                    <h5 class="text-success">Found Item (FND-8995)</h5>
+                                    <p class="mb-1"><strong>Item:</strong> Silver Dell Laptop</p>
+                                    <p class="mb-1"><strong>Location Found:</strong> Library, 3rd Floor</p>
+                                    <p class="mb-1"><strong>Key Detail:</strong> Sticker of a coding logo on the back.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="text-danger">Lost Report (LST-4512)</h5>
+                                    <p class="mb-1"><strong>Item:</strong> Dell XPS 13 (Silver)</p>
+                                    <p class="mb-1"><strong>Lost Location:</strong> Library, 3rd Floor Study Area</p>
+                                    <p class="mb-1"><strong>Key Detail:</strong> User stated: "Has a small sticker of a Python snake logo."</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-outline-danger me-2 review-action">Reject Match</button>
+                                <button class="btn btn-success confirm-match" data-match-id="001">Approve Match & Contact Owner</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Match Card Example 2 -->
+                    <div class="card match-card mb-4">
+                        <div class="card-header bg-warning text-dark fw-bold d-flex justify-content-between align-items-center">
+                            Potential Match #002 <span class="badge bg-light text-warning">60% Confidence</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 border-end">
+                                    <h5 class="text-success">Found Item (FND-9012)</h5>
+                                    <p class="mb-1"><strong>Item:</strong> Black Airpods Pro</p>
+                                    <p class="mb-1"><strong>Location Found:</strong> Gymnasium, Court 3</p>
+                                    <p class="mb-1"><strong>Key Detail:</strong> Case has a small scratch.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="text-danger">Lost Report (LST-4520)</h5>
+                                    <p class="mb-1"><strong>Item:</strong> Black Wireless Earbuds</p>
+                                    <p class="mb-1"><strong>Lost Location:</strong> PE Building Locker Room</p>
+                                    <p class="mb-1"><strong>Key Detail:</strong> User stated: "Lost earbuds in the area after my gym class."</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-outline-danger me-2 review-action">Reject Match</button>
+                                <button class="btn btn-success confirm-match" data-match-id="002">Approve Match & Contact Owner</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- User Claims Tab -->
+                <div class="tab-pane fade" id="claims" role="tabpanel" aria-labelledby="claims-tab">
+                    <p class="text-muted mb-4">These claims were submitted by users asserting ownership over a found item. Contact the user for verification details before release.</p>
+                    
+                    <!-- Claim Card Example 1 -->
+                    <div class="card shadow-sm border-danger mb-4">
+                        <div class="card-header bg-danger text-white fw-bold">
+                            Claim ID #1001 - Pending Verification
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 border-end">
+                                    <h5 class="text-success">Found Item (FND-8980)</h5>
+                                    <p class="mb-1"><strong>Item:</strong> Blue Water Bottle (Hydro)</p>
+                                    <p class="mb-1"><strong>Stored At:</strong> Student Union Info Desk</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="text-danger">Claim Details</h5>
+                                    <p class="mb-1"><strong>Claimant:</strong> Alice Johnson (A.J. in Cafeteria)</p>
+                                    <p class="mb-1"><strong>Verification:</strong> Claim states the bottle has a "Dinosaur sticker on the lid."</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-outline-danger me-2 review-action">Reject Claim</button>
+                                <button class="btn btn-warning text-dark confirm-claim" data-claim-id="1001">Verify & Schedule Pickup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Action Modal (Replaces alert()) -->
+            <div id="actionModal" class="modal fade" tabindex="-1" aria-labelledby="actionModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-info text-white">
+                            <h5 class="modal-title" id="actionModalLabel">Match Action Confirmed</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modalBodyText">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End Main Content Area -->
+    </div>
+
+    <!-- Load Bootstrap JS Bundle and Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // Initialize the modal
+            const actionModal = new bootstrap.Modal(document.getElementById('actionModal'));
+            const modalBodyText = document.getElementById('modalBodyText');
+
+            // Event listener for Approve Match button
+            document.querySelectorAll('.confirm-match').forEach(button => {
+                button.addEventListener('click', function() {
+                    const matchId = this.dataset.matchId;
+                    modalBodyText.innerHTML = `Successfully **Approved Match #${matchId}**. The system is now sending contact information to both the person who lost the item and the person who found it.`;
+                    actionModal.show();
+                    // In a real app, you'd update the database here.
+                });
+            });
+
+            // Event listener for Verify Claim button
+            document.querySelectorAll('.confirm-claim').forEach(button => {
+                button.addEventListener('click', function() {
+                    const claimId = this.dataset.claimId;
+                    modalBodyText.innerHTML = `Claim #${claimId} verified. Please proceed with scheduling the pickup for the item. The claim status has been updated.`;
+                    actionModal.show();
+                    // In a real app, you'd update the database here.
+                });
+            });
+            
+            // Event listener for Reject actions
+            document.querySelectorAll('.review-action').forEach(button => {
+                button.addEventListener('click', function() {
+                    const actionType = this.textContent;
+                    modalBodyText.innerHTML = `Action **${actionType}** initiated. The report/match has been flagged for further manual review.`;
+                    actionModal.show();
+                    // In a real app, you'd update the database here.
+                });
+            });
+        });
+    </script>
+</body>
+</html>

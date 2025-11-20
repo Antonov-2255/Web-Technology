@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Found Items | Campus Connect</title>
+    <!-- Load Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9;
+        }
+        .item-card {
+            border: none;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-img-top {
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e9ecef; /* Placeholder background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #495057;
+        }
+        .card-footer {
+            background-color: white;
+            border-top: 1px solid #f0f0f0;
+            border-bottom-left-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar (Same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-geo-alt-fill me-2" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>
+                Campus Connect L&F
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Client Side Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client_lost.html">Lost Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="client_found.html">Found Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client_report_lost.html">Report Lost</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-lg-3" href="admin_login.html">Admin Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area: Found Items Listings -->
+    <main class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="fw-bolder text-dark">Found Items on Campus</h1>
+            <p class="lead text-secondary">Browse the list below. If you see your lost item, click "Claim" to submit a claim request.</p>
+        </header>
+
+        <!-- Search and Filter Bar (Placeholder for future JS functionality) -->
+        <div class="row mb-4 justify-content-center">
+            <div class="col-lg-8">
+                <div class="input-group shadow-sm rounded-pill overflow-hidden">
+                    <input type="search" class="form-control form-control-lg border-0 ps-4" placeholder="Search by item name, location, or color...">
+                    <button class="btn btn-warning px-4 fw-bold" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items Grid -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+            <!-- Item Card 1: Laptop -->
+            <div class="col">
+                <div class="card item-card h-100">
+                    <div class="card-img-top">
+                        <!-- Placeholder for Image -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#0d6efd" class="bi bi-laptop" viewBox="0 0 16 16">
+                            <path d="M13.5 0a1.5 1.5 0 0 1 1.5 1.5V11h-1v-9.5a.5.5 0 0 0-.5-.5H2A.5.5 0 0 0 1.5 1.5V11H.5V1.5A1.5 1.5 0 0 1 2 0z"/>
+                            <path d="M16 13a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1v-.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 .5.5zM2 12a1 1 0 0 0-1 1v.5h14V13a1 1 0 0 0-1-1z"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">Black Laptop (Dell)</h5>
+                        <p class="card-text text-muted small mb-1">Found near the Library entrance.</p>
+                        <p class="card-text">A black Dell laptop in a grey sleeve. Screen lock is active.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="badge bg-info text-dark">Library</span>
+                        <a href="client_claim.html" class="btn btn-sm btn-outline-success fw-bold">Claim Item</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Card 2: Keys -->
+            <div class="col">
+                <div class="card item-card h-100">
+                    <div class="card-img-top">
+                        <!-- Placeholder for Image -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#28a745" class="bi bi-key" viewBox="0 0 16 16">
+                            <path d="M0 8a4 4 0 0 1 7.465-1.127L15.354.354a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L6.75 4.5 4.5 6.75l-2.617.523A4 4 0 0 1 0 8m8-4a3 3 0 1 0 0 6 3 3 0 0 0 0-6"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">Small Key Ring</h5>
+                        <p class="card-text text-muted small mb-1">Found in Lecture Hall B104.</p>
+                        <p class="card-text">Three silver keys on a blue plastic fob labeled "Gym Locker 42".</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="badge bg-info text-dark">Building B</span>
+                        <a href="client_claim.html" class="btn btn-sm btn-outline-success fw-bold">Claim Item</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Card 3: Wallet -->
+            <div class="col">
+                <div class="card item-card h-100">
+                    <div class="card-img-top">
+                        <!-- Placeholder for Image -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#dc3545" class="bi bi-wallet2" viewBox="0 0 16 16">
+                            <path d="M12.13 1.341A.846.846 0 0 0 12 1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-.256-.665zM12 2v1H4V2zm1 1h-1v10H4V3H3v10a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V3.5a.5.5 0 0 0-.5-.5z"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">Brown Leather Wallet</h5>
+                        <p class="card-text text-muted small mb-1">Found at the University Cafeteria.</p>
+                        <p class="card-text">No ID inside, but contains a few loose coins and a faded photo.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="badge bg-info text-dark">Cafeteria</span>
+                        <a href="client_claim.html" class="btn btn-sm btn-outline-success fw-bold">Claim Item</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Card 4: Water Bottle -->
+            <div class="col">
+                <div class="card item-card h-100">
+                    <div class="card-img-top">
+                        <!-- Placeholder for Image -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#6f42c1" class="bi bi-cup-hot" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M.5 4.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5H.5zM15 10H1V5h14z"/>
+                            <path d="M10 2a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1h-3zM4 2a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1H4z"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">Purple Insulated Bottle</h5>
+                        <p class="card-text text-muted small mb-1">Found next to the fountain in the quad.</p>
+                        <p class="card-text">Large stainless steel water bottle, slightly dented on the bottom.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="badge bg-info text-dark">Outdoor Quad</span>
+                        <a href="client_claim.html" class="btn btn-sm btn-outline-success fw-bold">Claim Item</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Campus Connect Lost & Found. All Rights Reserved. | <a href="admin_login.html" class="text-white">Admin Portal</a></p>
+        </div>
+    </footer>
+
+    <!-- Load Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

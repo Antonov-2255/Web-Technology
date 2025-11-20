@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Found Item | Campus Connect</title>
+    <!-- Load Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9;
+        }
+        .form-container {
+            max-width: 800px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .btn-submit {
+            padding: 10px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Success Message Alert (Hidden by default) -->
+    <div id="submissionAlert" class="alert alert-success success-message shadow-lg" role="alert">
+        <strong>Thank you!</strong> Your found item report has been submitted successfully.
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-geo-alt-fill me-2" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>
+                Campus Connect L&F
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Client Side Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client_lost.html">Lost Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client_found.html">Found Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="client_report_lost.html">Report Lost</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-lg-3" href="admin_login.html">Admin Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area: Report Found Form -->
+    <main class="container">
+        <div class="form-container mx-auto">
+            <header class="text-center mb-4">
+                <h1 class="fw-bolder text-success">Report an Item You Found</h1>
+                <p class="lead text-secondary">Thank you for being a good citizen! Please provide details about the item and your contact information.</p>
+            </header>
+
+            <form id="foundItemForm" class="needs-validation" novalidate>
+                <fieldset class="mb-4 p-3 border rounded">
+                    <legend class="float-none w-auto px-2 fs-5 text-success fw-bold">Item Details</legend>
+                    <div class="row g-3">
+                        <!-- Item Name -->
+                        <div class="col-md-6">
+                            <label for="itemName" class="form-label fw-bold">Item Name (e.g., Black Jacket, Gold Watch)</label>
+                            <input type="text" class="form-control" id="itemName" required>
+                            <div class="invalid-feedback">Please provide the name of the found item.</div>
+                        </div>
+
+                        <!-- Location Found -->
+                        <div class="col-md-6">
+                            <label for="locationFound" class="form-label fw-bold">Location Where Found (Specific is better!)</label>
+                            <input type="text" class="form-control" id="locationFound" required>
+                            <div class="form-text">e.g., 'Room 205, Business Building' or 'Bench by the Quad'.</div>
+                            <div class="invalid-feedback">Please specify the exact location where you found the item.</div>
+                        </div>
+
+                        <!-- Detailed Description -->
+                        <div class="col-12">
+                            <label for="itemDescription" class="form-label fw-bold">Detailed Description (Color, Brand, Condition, Contents)</label>
+                            <textarea class="form-control" id="itemDescription" rows="3" required></textarea>
+                            <div class="invalid-feedback">A detailed description is required.</div>
+                        </div>
+
+                        <!-- Date Found -->
+                        <div class="col-md-6">
+                            <label for="dateFound" class="form-label fw-bold">Approximate Date Found</label>
+                            <input type="date" class="form-control" id="dateFound" required>
+                            <div class="invalid-feedback">Please provide the date.</div>
+                        </div>
+
+                        <!-- Item Handed Over To (Physical Location) -->
+                        <div class="col-md-6">
+                            <label for="handedTo" class="form-label fw-bold">Where did you drop off the item?</label>
+                            <select class="form-select" id="handedTo" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option>Campus Security Office (Main)</option>
+                                <option>Library Front Desk</option>
+                                <option>Student Union Info Desk</option>
+                                <option>I still have the item.</option>
+                            </select>
+                            <div class="invalid-feedback">Please indicate where the item is located.</div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mb-4 p-3 border rounded bg-light">
+                    <legend class="float-none w-auto px-2 fs-5 text-success fw-bold">Your Contact Information (Finder)</legend>
+                    <div class="row g-3">
+                        <!-- Contact Name -->
+                        <div class="col-md-6">
+                            <label for="contactName" class="form-label fw-bold">Your Full Name</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                            <div class="invalid-feedback">Your name is required.</div>
+                        </div>
+
+                        <!-- Contact Email -->
+                        <div class="col-md-6">
+                            <label for="contactEmail" class="form-label fw-bold">Email Address</label>
+                            <input type="email" class="form-control" id="contactEmail" placeholder="your_email@example.com" required>
+                            <div class="invalid-feedback">A valid email is required.</div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Submit Button -->
+                <div class="d-grid gap-2">
+                    <button class="btn btn-success btn-submit" type="submit">Submit Found Item Report</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Campus Connect Lost & Found. All Rights Reserved. | <a href="admin_login.html" class="text-white">Admin Portal</a></p>
+        </div>
+    </footer>
+
+    <!-- Load Bootstrap JS Bundle and Custom JS for Form Validation -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            'use strict'
+
+            var form = document.getElementById('foundItemForm');
+            var alertElement = document.getElementById('submissionAlert');
+
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    event.preventDefault(); // Stop actual form submission
+
+                    // Show success message
+                    alertElement.style.display = 'block';
+                    setTimeout(() => {
+                        alertElement.style.display = 'none';
+                    }, 5000); // Hide after 5 seconds
+
+                    // Clear the form
+                    form.reset();
+                    form.classList.remove('was-validated');
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Items Reported | Campus Connect</title>
+    <!-- Load Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9;
+        }
+        .item-card {
+            border: 1px solid #f0f0f0;
+            border-left: 5px solid #dc3545; /* Red border to signify 'Lost' */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-icon {
+            color: #dc3545; /* Red color for 'Lost' icon */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-geo-alt-fill me-2" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>
+                Campus Connect L&F
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Client Side Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="client_lost.html">Lost Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client_found.html">Found Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client_report_lost.html">Report Lost</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-lg-3" href="admin_login.html">Admin Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area: Lost Item Reports -->
+    <main class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="fw-bolder text-dark">Active Lost Item Reports</h1>
+            <p class="lead text-secondary">Have you found an item? Check this list to see if someone has already reported it missing.</p>
+        </header>
+
+        <!-- Search and Filter Bar -->
+        <div class="row mb-4 justify-content-center">
+            <div class="col-lg-8">
+                <div class="input-group shadow-sm rounded-pill overflow-hidden">
+                    <input type="search" class="form-control form-control-lg border-0 ps-4" placeholder="Search for type of item, date, or location lost...">
+                    <button class="btn btn-danger px-4 fw-bold" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items Grid -->
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+
+            <!-- Item Card 1: Student ID -->
+            <div class="col">
+                <div class="card item-card h-100 p-3">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-badge me-3 card-icon" viewBox="0 0 16 16">
+                            <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM3 12.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5"/>
+                            <path d="M14 6c0 1.25-.722 2.375-1.5 3-1.071 1.05-1.99 1.83-3.41 2.875A1 1 0 0 1 8 13.5V14h-.25v-.5a.5.5 0 0 1 1 0V14H8a2 2 0 0 1-2-2.5 4.5 4.5 0 0 0-1.5-3C2.722 8.375 2 7.25 2 6c0-2.209 1.791-4 4-4h4c2.209 0 4 1.791 4 4zm-1 0c0-1.654-1.346-3-3-3H6c-1.654 0-3 1.346-3 3 0 1.01.442 1.84 1.144 2.457A2.5 2.5 0 0 1 8 10.5h.001A2.5 2.5 0 0 1 11.856 8.457C12.558 7.84 13 7.01 13 6z"/>
+                        </svg>
+                        <div>
+                            <h5 class="mb-0 fw-bold">University Student ID Card</h5>
+                            <span class="text-danger small fw-semibold">LOST</span>
+                        </div>
+                    </div>
+                    <div class="card-body ps-0 pt-3">
+                        <p class="card-text mb-2"><strong>Details:</strong> Standard blue card, has a black lanyard attached. Name on the card is 'Jane Doe'.</p>
+                        <p class="card-text mb-2 small text-muted"><strong>Last Seen:</strong> Near the Science Building Labs (3rd Floor)</p>
+                        <p class="card-text mb-2 small text-muted"><strong>Date Lost:</strong> October 12, 2025</p>
+                        <div class="d-grid mt-3">
+                            <a href="client_report_found.html" class="btn btn-outline-danger fw-bold btn-sm">I Found This Item! (Report Match)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Card 2: Airpods -->
+            <div class="col">
+                <div class="card item-card h-100 p-3">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-headphones me-3 card-icon" viewBox="0 0 16 16">
+                            <path d="M8 6.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                            <path d="M8 1c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 15A7 7 0 0 1 1 9c0-3.86 3.14-7 7-7s7 3.14 7 7c0 3.86-3.14 7-7 7z"/>
+                            <path d="M12.5 9.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            <path d="M3.5 9.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            <path d="M8 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                        </svg>
+                        <div>
+                            <h5 class="mb-0 fw-bold">AirPods Pro (2nd Gen)</h5>
+                            <span class="text-danger small fw-semibold">LOST</span>
+                        </div>
+                    </div>
+                    <div class="card-body ps-0 pt-3">
+                        <p class="card-text mb-2"><strong>Details:</strong> White case with a small scratch on the back corner. Engraved initials 'T.S.' on the bottom.</p>
+                        <p class="card-text mb-2 small text-muted"><strong>Last Seen:</strong> Student Union Food Court, near the coffee shop.</p>
+                        <p class="card-text mb-2 small text-muted"><strong>Date Lost:</strong> November 1, 2025</p>
+                        <div class="d-grid mt-3">
+                            <a href="client_report_found.html" class="btn btn-outline-danger fw-bold btn-sm">I Found This Item! (Report Match)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Card 3: Textbook -->
+            <div class="col">
+                <div class="card item-card h-100 p-3">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-book me-3 card-icon" viewBox="0 0 16 16">
+                            <path d="M1 2.828v10.963C1 15.228 2.067 16 3 16h10c.933 0 2-2.067 2-3.209V2.828A.828.828 0 0 0 14.172 2H1.828A.828.828 0 0 0 1 2.828zM14 13.067c0 1.25-1.067 2.148-2 2.148H4c-.933 0-2-1.148-2-2.148V4.867l6 6 6-6V13.067z"/>
+                        </svg>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Calculus Textbook (Green Cover)</h5>
+                            <span class="text-danger small fw-semibold">LOST</span>
+                        </div>
+                    </div>
+                    <div class="card-body ps-0 pt-3">
+                        <p class="card-text mb-2"><strong>Details:</strong> "Advanced Calculus: 7th Edition." Has several sticky notes in Chapters 3 and 4.</p>
+                        <p class="card-text mb-2 small text-muted"><strong>Last Seen:</strong> Dropped near the parking lot entrance to Building D.</p>
+                        <p class="card-text mb-2 small text-muted"><strong>Date Lost:</strong> October 28, 2025</p>
+                        <div class="d-grid mt-3">
+                            <a href="client_report_found.html" class="btn btn-outline-danger fw-bold btn-sm">I Found This Item! (Report Match)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Card 4: Umbrella -->
+            <div class="col">
+                <div class="card item-card h-100 p-3">
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-umbrella me-3 card-icon" viewBox="0 0 16 16">
+                            <path d="M11.25 0a.75.75 0 0 1 .75.75V3H4V.75a.75.75 0 0 1 1.5 0V1h4.5V.75a.75.75 0 0 1 .75-.75z"/>
+                            <path d="M13 3a1 1 0 0 1 1 1v.75a.75.75 0 0 1-1.5 0V4h-10v.75a.75.75 0 0 1-1.5 0V4a1 1 0 0 1 1-1h10zM12 5H4v10a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V5z"/>
+                        </svg>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Large Red Umbrella</h5>
+                            <span class="text-danger small fw-semibold">LOST</span>
+                        </div>
+                    </div>
+                    <div class="card-body ps-0 pt-3">
+                        <p class="card-text mb-2"><strong>Details:</strong> Standard folding umbrella, bright red color. Handle has a small black loop strap.</p>
+                        <p class="card-text mb-2 small text-muted"><strong>Last Seen:</strong> Outside the main Administration Building, near the bike racks.</p>
+                        <p class="card-text mb-2 small text-muted"><strong>Date Lost:</strong> November 5, 2025</p>
+                        <div class="d-grid mt-3">
+                            <a href="client_report_found.html" class="btn btn-outline-danger fw-bold btn-sm">I Found This Item! (Report Match)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Campus Connect Lost & Found. All Rights Reserved. | <a href="admin_login.html" class="text-white">Admin Portal</a></p>
+        </div>
+    </footer>
+
+    <!-- Load Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
